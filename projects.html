@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Praveenkumar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-darker d-flex flex-column min-vh-100">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" id="navbar-brand">Loading...</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list text-light"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projects.html">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="py-5 mt-5">
+        <div class="container text-center pt-5">
+            <h1 class="display-3 fw-bold text-white mb-3">All <span class="text-gradient">Projects</span></h1>
+            <p class="text-secondary lead mb-5">A complete collection of my recent work and projects.</p>
+        </div>
+    </section>
+
+    <!-- All Projects Grid -->
+    <section class="pb-5 mb-5 flex-grow-1">
+        <div class="container">
+            <div class="row g-4" id="all-projects-container">
+                <!-- Projects injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 border-top border-secondary border-opacity-25 mt-auto">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p id="footer-text" class="text-secondary mb-0 small">Loading...</p>
+            <div class="d-flex gap-3 mt-3 mt-md-0" id="footer-socials-container">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Populate Navbar Brand
+            if (portfolioData.navbar) {
+                document.getElementById('navbar-brand').innerHTML = `${portfolioData.navbar.navbarText || portfolioData.navbar.brandText}<span class="text-accent">${portfolioData.navbar.brandAccent}</span>`;
+            }
+            // Populate Footer
+            if (portfolioData.footer) {
+                document.getElementById('footer-text').textContent = portfolioData.footer.text;
+                const footerSocialsContainer = document.getElementById('footer-socials-container');
+                portfolioData.footer.socials.forEach(social => {
+                    footerSocialsContainer.innerHTML += `<a href="${social.href}" class="text-secondary hover-white"><i class="bi ${social.icon}"></i></a>`;
+                });
+            }
+
+            // Populate All Projects
+            const projectsContainer = document.getElementById('all-projects-container');
+            if (portfolioData.projects_section && portfolioData.projects_section.projects) {
+                portfolioData.projects_section.projects.forEach(project => {
+                    let badgesHtml = project.badges.map(badge => `<span class="badge bg-glass text-white">${badge}</span>`).join('');
+                    projectsContainer.innerHTML += `
+                        <div class="col-md-4">
+                            <div class="project-card h-100">
+                                <div class="project-img-wrapper">
+                                    <img src="${project.image}" alt="${project.title}" class="img-fluid project-img">
+                                    <div class="project-overlay">
+                                        <a href="#" class="btn btn-light rounded-circle p-3"><i class="bi bi-arrow-up-right text-dark"></i></a>
+                                    </div>
+                                </div>
+                                <div class="project-info p-4">
+                                    <div class="d-flex gap-2 mb-3 flex-wrap">
+                                        ${badgesHtml}
+                                    </div>
+                                    <h3 class="h5 text-white mb-2">${project.title}</h3>
+                                    <p class="text-secondary small mb-0">${project.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            // Navbar scroll handling
+            window.addEventListener('scroll', function () {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>s

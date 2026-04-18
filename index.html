@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Developer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" id="navbar-brand">Hey, Praveenkumar<span
+                    class="text-accent">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list text-light"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero d-flex align-items-center">
+        <div class="hero-bg"></div>
+        <div class="container position-relative z-1">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span id="hero-badge" class="badge badge-accent mb-3">...</span>
+                    <h1 class="display-1 fw-bold text-white mb-4 hero-title">
+                        <span id="hero-title-1"></span>
+                        <span id="hero-title-2" class="text-gradient"></span>
+                    </h1>
+                    <p id="hero-description" class="lead text-secondary mb-5 w-75">
+                        Loading...
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#projects" class="btn btn-primary-custom rounded-pill px-5 py-3 fw-semibold">View
+                            Work</a>
+                        <a href="#contact" class="btn btn-outline-custom rounded-pill px-5 py-3 fw-semibold">Get in
+                            Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span class="text-uppercase small tracking-wide text-secondary mt-2 d-block">Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 section-padding">
+        <div class="container">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="about-image-wrapper">
+                        <div class="glass-shape shape-1"></div>
+                        <div class="glass-shape shape-2"></div>
+                        <div class="glass-panel text-center p-5">
+                            <h2 class="display-4 fw-bold text-gradient mb-0" id="about-years">0</h2>
+                            <p class="text-secondary text-uppercase tracking-wide mt-2">Years of Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4"><span id="about-title-1"></span><span id="about-title-2"
+                            class="text-white"></span></h2>
+                    <p id="about-description" class="text-secondary mb-4">
+                        Loading...
+                    </p>
+                    <div class="row g-4 mt-2" id="skills-container">
+                        <!-- Skills will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 section-padding bg-darker">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div>
+                    <h2 class="section-title mb-2"><span id="projects-title-1"></span><span id="projects-title-2"
+                            class="text-white"></span></h2>
+                    <p id="projects-subtitle" class="text-secondary">Loading...</p>
+                </div>
+                <a href="projects.html"
+                    class="btn btn-link text-accent text-decoration-none d-none d-md-inline-block">View All
+                    Projects <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="row g-4" id="projects-container">
+                <!-- Projects will be injected here -->
+            </div>
+
+            <div class="text-center mt-5 d-md-none">
+                <a href="projects.html" class="btn btn-outline-custom rounded-pill px-4">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 section-padding">
+        <div class="container">
+            <div class="glass-container p-5 rounded-4 position-relative overflow-hidden">
+                <div class="glow-blob top-right"></div>
+                <div class="glow-blob bottom-left"></div>
+
+                <div class="row z-1 position-relative align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h2 class="display-5 fw-bold text-white mb-4"><span id="contact-title-1"></span><span
+                                id="contact-title-2" class="text-gradient"></span></h2>
+                        <p id="contact-description" class="text-secondary mb-5 w-75">
+                            Loading...
+                        </p>
+                        <div class="d-flex flex-column gap-3" id="contact-links-container">
+                            <!-- Links will be injected here -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="contact-form">
+                            <div class="mb-4">
+                                <input type="text" class="form-control custom-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" class="form-control custom-input" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="form-control custom-input" rows="4" placeholder="Your Message"
+                                    required></textarea>
+                            </div>
+                            <button type="submit"
+                                class="btn btn-primary-custom rounded-pill w-100 py-3 fw-semibold">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 border-top border-secondary border-opacity-25">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p id="footer-text" class="text-secondary mb-0 small">Loading...</p>
+            <div class="d-flex gap-3 mt-3 mt-md-0" id="footer-socials-container">
+                <!-- Social links will be injected here -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App Data script -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Simple script for navbar background on scroll
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
